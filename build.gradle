@@ -3,6 +3,40 @@ plugins {
 	id 'maven-publish'
 }
 
+// 读取 version.properties
+def versionFile = file('version.properties')
+def props = new Properties()
+
+if (versionFile.canRead()) {
+    versionFile.withInputStream { props.load(it) }
+} else {
+    props.setProperty('version', '1.0.0') // 默认值
+    versionFile.withOutputStream { props.store(it, null) }
+}
+
+// 设置项目版本
+version = props.getProperty('version')
+
+// 注册一个任务，在 build 之前递增版本号
+tasks.register('incrementVersion') {
+    doLast {
+        def currentVersion = props.getProperty('version')
+        def parts = currentVersion.tokenize('.')
+        // 将最后一位数字加 1
+        def newVersion = "${parts[0]}.${parts[1]}.${parts[2].toInteger() + 1}"
+
+        props.setProperty('version', newVersion)
+        versionFile.withOutputStream { props.store(it, null) }
+
+        println "版本号已从 ${currentVersion} 递增到 ${newVersion}"
+    }
+}
+
+// 确保 build 任务依赖于 incrementVersion，且在其之前执行
+tasks.named('build') {
+    dependsOn 'incrementVersion'
+}
+
 repositories {
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
