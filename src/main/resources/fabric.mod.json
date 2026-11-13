@@ -2,14 +2,14 @@
 	"schemaVersion": 1,
 	"id": "sevensix-mod",
 	"version": "${version}",
-	"name": "sevensix Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "这个模组可以删掉",
+	"description": "这只是我用来练习的模组，不要对它抱有期望！！！",
 	"authors": [
 		"7600N"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/7600N/sevensix-mod",
+		"sources": "https://github.com/7600N/sevensix-mod/releases/tag/nothing"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/sevensix-mod/icon.png",

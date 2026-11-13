@@ -3,6 +3,7 @@ package com.sevensix.items;
 import com.sevensix.SevensixMod;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -13,7 +14,10 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.component.CookingFuel;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
+import net.minecraft.world.level.storage.loot.providers.number.floats.ResolvableFloat;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ResolvableInt;
 
 import java.util.function.Function;
 
@@ -34,12 +38,17 @@ public class Items {
 
     //注册物品
     public static final ResourceKey<Item> CHOCOLATE = create("chocolate");
+    public static final ResourceKey<Item> CHOCOLATE_PAPER = create("chocolate_paper");
+
     public static final Item chocolate = register(Items.CHOCOLATE, Item::new, new Item.Properties().food(CHOCOLATE_COMMON,CHOCOLATE_BUFF));
+    public static final Item chocolate_paper = register(Items.CHOCOLATE_PAPER,Item::new,new Item.Properties().component(DataComponents.COOKING_FUEL,new CookingFuel(new ResolvableInt.Constant(20 * 20),new ResolvableFloat.Constant(1.0f))));
 
     //这里在模组加载中调用上面所写的，需要在SevensixMod中声明
     public static void initialize() {
         //将物品加入创造模式栏，这里用的是食物栏
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS)
                 .register((creativeTab) -> creativeTab.accept(Items.chocolate));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
+                .register((creativeTab) -> creativeTab.accept(Items.chocolate_paper));
     }
 }
