@@ -9,7 +9,7 @@
 	],
 	"contact": {
 		"homepage": "https://github.com/7600N/sevensix-mod",
-		"sources": "https://github.com/7600N/sevensix-mod/releases/tag/nothing"
+		"sources": "https://github.com/7600N/sevensix-mod/releases/"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/sevensix-mod/icon.png",

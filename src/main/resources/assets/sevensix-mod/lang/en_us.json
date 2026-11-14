@@ -1,4 +1,7 @@
 {
   "item.sevensix-mod.chocolate": "Chocolate",
-  "item.sevensix-mod.chocolate_paper": "Chocolate Paper"
+  "item.sevensix-mod.chocolate_paper": "Chocolate Paper",
+  "item.sevensix-mod.cocoa_powder": "Cocoa Powder",
+  "item.sevensix-mod.excited_potion.effect.excited": "coffee",
+  "effect.sevensix-mod.excited": "Excitement"
 }

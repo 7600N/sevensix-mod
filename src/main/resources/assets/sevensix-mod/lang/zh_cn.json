@@ -1,4 +1,7 @@
 {
   "item.sevensix-mod.chocolate": "巧克力",
-  "item.sevensix-mod.chocolate_paper": "巧克力包装纸"
+  "item.sevensix-mod.chocolate_paper": "巧克力包装纸",
+  "item.sevensix-mod.cocoa_powder": "可可粉",
+  "item.sevensix-mod.excited_potion.effect.excited": "咖啡",
+  "effect.sevensix-mod.excited": "兴奋"
 }

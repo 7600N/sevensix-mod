@@ -1,8 +1,8 @@
 # sevensix Mod
 
-## Setup
+## 提示
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+这只是我用来练习的小模组，不要对他抱有期望，游戏崩了可以先禁用这个模组
 
 ## License
 
